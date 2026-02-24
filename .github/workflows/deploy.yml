@@ -26,6 +26,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'A REMPLACER PAR LE NOM DE L APP SERVICE'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          app-name: 'This-Is-Not-Finn'
+          publish-profile: ${{ secrets.AZURE_THIS_IS_NOT_FINN_PUBLISH_PROFILE }}
           images: '${{ secrets.DOCKER_USERNAME }}/vue-app:${{ github.sha }}'
