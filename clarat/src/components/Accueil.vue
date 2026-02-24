@@ -34,10 +34,10 @@ ul li {
 h1{
   color: rgb(68, 193, 224);
 }
-ul li:hover {
+ul li:hover{
   background-color: rgb(68, 193, 224);
 }
-h1:hover{
+h1:hover ~ li{
   color:rgb(193, 243, 255);
 }
 ul li h1.active {
