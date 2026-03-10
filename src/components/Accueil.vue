@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <div class="header-container">
   <nav>
     <ul>
       <li><h1>Accueil</h1></li>
@@ -12,6 +13,10 @@
       <li><h1>À Propos</h1></li>
     </ul>
   </nav>
+  <div class="header-image">
+        <img src="logo.png" alt="logo">
+    </div>
+</div>
 </template>
 
 <style scoped>
@@ -40,7 +45,17 @@ ul li:hover{
 h1:hover ~ li{
   color:rgb(193, 243, 255);
 }
-ul li h1.active {
-  background-color: #04AA6D;
+li:hover h1{
+  color: #e7e7e7;
+}
+.header-container{
+  width: 100%;
+  background-color: red;
+  display: flex;
+}
+.header-image img{
+  height: 60px;       /* limite la taille à l’espace du header */
+  width: auto;        /* garde les proportions */
+  object-fit: contain;
 }
 </style>
