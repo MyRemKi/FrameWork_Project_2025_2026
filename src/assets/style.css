@@ -1,0 +1,233 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.hotel {
+  background-image: url("background_hotel.png");
+}
+
+body.flight {
+  background-image: url("background_flight.png");
+}
+
+header {
+  padding: 15px;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-vol {
+  background: linear-gradient(270deg,#6ec6ff,#001f54);
+  background-size: 400% 400%;
+  animation: gradientMove 10s infinite;
+}
+
+.nav-hotel {
+  background: linear-gradient(270deg,#ff512f,#ff9966);
+  background-size: 400% 400%;
+  animation: gradientMove 10s infinite;
+}
+
+.nav-other {
+  background: linear-gradient(270deg,#ffffff,#e8a87c,#d9a066);
+  background-size: 400% 400%;
+  animation: gradientMove 10s infinite;
+  color: black;
+}
+
+.nav-other a {
+  color: black;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+
+  background: rgb(215, 215, 215);
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+.liste-billets {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.billet-item {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.billet-item {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; 
+}
+
+.billet-item:hover {
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.liste-billets {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  position: relative;
+  padding: 40px;
+}
+
+.liste-billets::before{
+  content:"";
+  position:absolute;
+  left:20%;
+  top:0;
+  bottom:0;
+  width:6px;
+  border-radius:3px;
+}
+
+.liste-billets::after{
+  content:"";
+  position:absolute;
+  right:20%;
+  top:0;
+  bottom:0;
+  width:6px;
+  border-radius:3px;
+}
+
+.page-vols {
+  background-image: url("images/fond-vol.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
