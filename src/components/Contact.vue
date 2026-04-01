@@ -2,7 +2,7 @@
   <div class="contact-page">
     <div class="contact-box">
       <h1>CONTACT US</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <p>Contact Us for any problem or demand you need. We wille call you back as fast as we can</p>
       <form @submit.prevent="handleSubmit" class="contact-form">
         <input type="text" placeholder="Your Name" v-model="form.name" required />
         <input type="email" placeholder="Your Mail" v-model="form.email" required />
