@@ -1,14 +1,69 @@
-<script setup>
-import TheWelcome from './components/Accueil.vue'
-</script>
-
 <template>
-
-  <main>
-    <TheWelcome />
-  </main>
-  <center><h1>Ca c'est du sport !</h1></center>
+  <div id="app">
+    <Navbar />
+    <!-- Main content : padding-top pour laisser la place au navbar -->
+    <div class="main-content">
+      <router-view />
+    </div>
+  </div>
 </template>
 
-<style scoped>
+<script>
+import Navbar from "./components/Navbar.vue";
+
+export default {
+  name: "App",
+  components: {
+    Navbar,
+  },
+  watch: {
+    $route(to) {
+      this.updateBodyBackground(to.name);
+    }
+  },
+  mounted() {
+    this.updateBodyBackground(this.$route.name);
+  },
+  methods: {
+    updateBodyBackground(routeName) {
+      if (routeName === "Hotel") {
+        document.body.style.backgroundImage = "url('/assets/background_hotel.png')";
+      } else {
+        document.body.style.backgroundImage = "url('/assets/background_vol.png')";
+      }
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundPosition = "center";
+    }
+  }
+};
+</script>
+
+<style>
+/* =================== ESPACE POUR NAVBAR FIXE =================== */
+.main-content {
+  padding-top: 80px; /* hauteur du navbar pour desktop */
+  transition: padding-top 0.3s ease;
+}
+
+/* Ajustement pour tablettes */
+@media (max-width: 1024px) {
+  .main-content {
+    padding-top: 90px;
+  }
+}
+
+/* Ajustement pour mobiles */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 100px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 110px;
+  }
+}
 </style>
