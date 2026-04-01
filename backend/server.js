@@ -7,13 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-/* ============================
-   PARTIE VOLS
-============================ */
-
-/* -------------------------
-   SUGGESTIONS AÉROPORT / VILLES
-------------------------- */
 app.get("/api/airports_suggestions", async (req, res) => {
   const { q } = req.query;
   if (!q) return res.status(400).json({ error: "Missing query" });
@@ -40,9 +33,7 @@ app.get("/api/airports_suggestions", async (req, res) => {
   }
 });
 
-/* -------------------------
-   RECHERCHE ALLER SIMPLE
-------------------------- */
+
 app.get("/api/flights-oneway", async (req, res) => {
   const { departure_id, arrival_id, date } = req.query;
   if (!departure_id || !arrival_id || !date) {
@@ -98,9 +89,7 @@ app.get("/api/flights-oneway", async (req, res) => {
   }
 });
 
-/* -------------------------
-   RECHERCHE ALLER-RETOUR
-------------------------- */
+
 app.get("/api/flights-roundtrip", async (req, res) => {
   const { departure_id, arrival_id, date, return_date } = req.query;
   if (!departure_id || !arrival_id || !date || !return_date) {
@@ -157,13 +146,7 @@ app.get("/api/flights-roundtrip", async (req, res) => {
   }
 });
 
-/* ============================
-   PARTIE HOTELS
-============================ */
 
-/* -------------------------
-   SUGGESTIONS HOTELS
-------------------------- */
 app.get("/api/hotels_suggestions", async (req, res) => {
   const { q } = req.query;
   if (!q) return res.status(400).json({ error: "Missing query" });
@@ -193,9 +176,7 @@ app.get("/api/hotels_suggestions", async (req, res) => {
   }
 });
 
-/* -------------------------
-   RECHERCHE HOTELS
-------------------------- */
+
 app.get("/api/hotels", async (req, res) => {
   const { q, check_in_date, check_out_date, adults } = req.query;
   if (!q || !check_in_date || !check_out_date) {
@@ -223,7 +204,7 @@ app.get("/api/hotels", async (req, res) => {
       ...h,
       rate_per_night: h.rate_per_night,
       total_price: h.rate_per_night?.lowest ? (h.rate_per_night.lowest * nights).toFixed(2) : "-",
-      rating: h.rating ? parseFloat(h.rating.toFixed(1)) : "-" // Note améliorée
+      rating: h.rating ? parseFloat(h.rating.toFixed(1)) : "-" 
     }));
 
     res.json({ hotels });
@@ -233,9 +214,7 @@ app.get("/api/hotels", async (req, res) => {
   }
 });
 
-/* -------------------------
-   RECHERCHE HOTEL PAR PLACE_ID
-------------------------- */
+
 app.get("/api/hotels_by_id", async (req, res) => {
   const { hotel_id, check_in_date, check_out_date, adults } = req.query;
   if (!hotel_id || !check_in_date || !check_out_date) {
@@ -273,7 +252,4 @@ app.get("/api/hotels_by_id", async (req, res) => {
   }
 });
 
-/* ============================
-   DEMARRAGE DU SERVEUR
-============================ */
 app.listen(3000, () => console.log("Backend running on http://localhost:3000"));

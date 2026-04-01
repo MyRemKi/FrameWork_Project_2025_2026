@@ -1,10 +1,8 @@
 <template>
 <div class="container">
 
-  <!-- BARRE HORIZONTALE -->
   <div class="search-bar">
 
-    <!-- TYPE VOYAGE -->
     <div class="field type-field">
       <label>Type</label>
       <select v-model="search.roundtrip">
@@ -13,7 +11,6 @@
       </select>
     </div>
 
-    <!-- DEPART -->
     <div class="field autocomplete-box">
       <label>Départ</label>
       <input
@@ -28,10 +25,7 @@
       </ul>
     </div>
 
-    <!-- SWITCH -->
     <div class="swap" @click="swapAirports">⇄</div>
-
-    <!-- ARRIVEE -->
     <div class="field autocomplete-box">
       <label>Arrivée</label>
       <input
@@ -46,24 +40,20 @@
       </ul>
     </div>
 
-    <!-- DATE ALLER -->
     <div class="field">
       <label>Aller</label>
       <input ref="dateInput" class="input" placeholder="Date aller"/>
     </div>
 
-    <!-- DATE RETOUR -->
     <div class="field" v-if="search.roundtrip">
       <label>Retour</label>
       <input ref="returnDateInput" class="input" placeholder="Date retour"/>
     </div>
 
-    <!-- BOUTON -->
     <button @click="getFlights" class="btn-search">🔍</button>
 
   </div>
 
-  <!-- RESULTATS -->
   <div v-if="loading" class="loading">Chargement...</div>
   <div v-if="error" class="error">{{ error }}</div>
 
@@ -100,7 +90,7 @@ import flatpickr from "flatpickr"
 import "flatpickr/dist/flatpickr.min.css"
 
 export default {
-  name: "Flight", // Nom de la route utilisé dans App.vue pour le background
+  name: "Flight", 
   data() {
     return {
       departureSuggestions: [],
@@ -108,7 +98,7 @@ export default {
       flights: [],
       loading: false,
       error: "",
-      returnPicker: null, // pour flatpickr
+      returnPicker: null, 
 
       search: {
         departureText: "",
@@ -123,7 +113,6 @@ export default {
   },
 
   mounted() {
-    // DATE ALLER
     flatpickr(this.$refs.dateInput, {
       dateFormat: "Y-m-d",
       onChange: (selectedDates, dateStr) => {
@@ -280,14 +269,12 @@ export default {
 </script>
 
 <style scoped>
-/* =================== CONTENEUR PRINCIPAL =================== */
 .container{
   max-width:1100px;
   margin:auto;
   padding-top:120px;
 }
 
-/* =================== BARRE DE RECHERCHE =================== */
 .search-bar{
   display:flex;
   align-items:center;
@@ -310,7 +297,6 @@ export default {
   flex-shrink:0;
 }
 
-/* =================== CHAMPS =================== */
 .field{
   position:relative;
   display:flex;
@@ -329,7 +315,6 @@ export default {
   background:transparent;
 }
 
-/* =================== DROPDOWN =================== */
 .dropdown{
   position:absolute;
   top:60px;
@@ -351,14 +336,12 @@ export default {
   background:#f0f4ff;
 }
 
-/* =================== SWAP =================== */
 .swap{
   cursor:pointer;
   font-size:20px;
   padding:5px 10px;
 }
 
-/* =================== CARDS =================== */
 .card{
   background:white;
   margin-top:15px;
@@ -390,7 +373,6 @@ export default {
   border-radius:6px;
 }
 
-/* =================== ERREUR ET LOADING =================== */
 .error{
   color:red;
   margin-top:10px;
@@ -401,7 +383,6 @@ export default {
   font-weight:bold;
 }
 
-/* =================== RESPONSIVE =================== */
 @media(max-width:768px){
   .search-bar{
     flex-wrap:wrap;

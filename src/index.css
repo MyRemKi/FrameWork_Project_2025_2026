@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* RESET GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,6 @@ body, html, #app {
   overflow-x: hidden;
 }
 
-/* Bulles animées globales si besoin */
 .bubble {
   position: absolute;
   bottom: -50px;
@@ -31,7 +29,6 @@ body, html, #app {
   100% { transform: translateY(-100vh) scale(0.8); opacity: 0; }
 }
 
-/* Styles global NavBar si tu veux override */
 nav {
   font-family: 'Inter', sans-serif;
 }

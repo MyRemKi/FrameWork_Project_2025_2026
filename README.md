@@ -69,8 +69,16 @@ API Backend : Express avec endpoints pour les vols (/api/flights-oneway, /api/fl
 
 Code de l’API : inclus dans le dossier backend.
 
+lien api hotel :https://serpapi.com/google-hotels-api
+lien api vol : https://serpapi.com/google-flights-api
+
 ### Explication de l’API 
 l’API fournit des données JSON simulant des vols et des suggestions d’aéroports, directement utilisables par le frontend Vue.
 Contact
 
 Pour toute question ou besoin concernant l’application, vous pouvez me contacter à : remi.kalkan@hotmail.com
+
+### MES EXCUSES LES PLUS SINCERES
+Je tiens sincerement a mexcuser pour le retard, je pensais avoir envoyé le contenu malgré que je ne pouvais plus commit mes derniers travaux hier, mon commit ne veux plus fonctionner dnas le projet. J'avais donc envoyer en zip le projet avec les critères comme indiqué, mais je remarque que le projet n'a pas été transmit depuis iCampus.
+
+Je m'excuse pour cette gène occasioné involontaire et non-voulu.

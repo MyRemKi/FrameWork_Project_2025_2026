@@ -1,6 +1,5 @@
 <template>
   <div class="about-page">
-    <!-- Bloc Bienvenue -->
     <div class="info-block">
       <div class="info-image">
         <img src="../assets/bienvenu.png" alt="Bienvenue" />
@@ -13,7 +12,6 @@
       </div>
     </div>
 
-    <!-- Bloc Vols -->
     <router-link to="/vols" class="info-block">
       <div class="info-image">
         <img src="../assets/home-flights.png" alt="Vols" />
@@ -26,7 +24,6 @@
       </div>
     </router-link>
 
-    <!-- Bloc Hôtels -->
     <router-link to="/hotels" class="info-block">
       <div class="info-image">
         <img src="../assets/about-hotels.png" alt="Hôtels" />
@@ -39,7 +36,6 @@
       </div>
     </router-link>
 
-    <!-- Bloc À propos -->
     <router-link to="/apropos" class="info-block">
       <div class="info-image">
         <img src="../assets/home-about.png" alt="À propos" />
@@ -52,7 +48,6 @@
       </div>
     </router-link>
 
-    <!-- Bloc Contact -->
     <router-link to="/contact" class="info-block">
       <div class="info-image">
         <img src="../assets/about-site.jpg" alt="Contact" />
@@ -86,26 +81,24 @@ export default {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Bloc orange par défaut avec transition rouge au hover */
 .info-block {
   display: flex;
   width: 1280px;
-  background-color: #ff6600; /* orange vif */
+  background-color: #ff6600; 
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
   cursor: pointer;
   transition: background-color 0.4s ease;
   align-items: stretch;
-  text-decoration: none; /* pour router-link */
+  text-decoration: none;
 }
 
 .info-block:hover {
-  background-color: #cc3300; /* rouge foncé */
+  background-color: #cc3300; 
   box-shadow: 0 8px 20px rgba(204, 51, 0, 0.6);
 }
 
-/* Image */
 .info-image {
   flex-shrink: 0;
   width: 160px;
@@ -126,7 +119,6 @@ export default {
   transform: scale(1.05);
 }
 
-/* Texte */
 .info-text {
   flex-grow: 1;
   padding: 24px 30px;
@@ -137,7 +129,6 @@ export default {
   overflow-wrap: break-word;
 }
 
-/* Titre */
 .info-text h2 {
   margin: 0 0 12px 0;
   font-weight: 700;
@@ -145,7 +136,6 @@ export default {
   color: #fffde7;
 }
 
-/* Description */
 .info-text p {
   margin: 0;
   font-size: 16px;
@@ -153,7 +143,6 @@ export default {
   color: #ffeacc;
 }
 
-/* Responsive */
 @media (max-width: 1280px) {
   .info-block {
     flex-direction: column;

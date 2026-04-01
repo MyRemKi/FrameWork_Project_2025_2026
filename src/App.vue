@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Navbar />
-    <!-- Main content : padding-top pour laisser la place au navbar -->
     <div class="main-content">
       <router-view />
     </div>
@@ -40,27 +39,23 @@ export default {
 </script>
 
 <style>
-/* =================== ESPACE POUR NAVBAR FIXE =================== */
 .main-content {
-  padding-top: 80px; /* hauteur du navbar pour desktop */
+  padding-top: 80px;
   transition: padding-top 0.3s ease;
 }
 
-/* Ajustement pour tablettes */
 @media (max-width: 1024px) {
   .main-content {
     padding-top: 90px;
   }
 }
 
-/* Ajustement pour mobiles */
 @media (max-width: 768px) {
   .main-content {
     padding-top: 100px;
   }
 }
 
-/* Très petits écrans */
 @media (max-width: 480px) {
   .main-content {
     padding-top: 110px;

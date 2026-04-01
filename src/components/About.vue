@@ -1,6 +1,5 @@
 <template>
   <div class="about-page">
-    <!-- Bloc Vols -->
     <div class="info-block">
       <div class="info-image">
         <img src="../assets/about-flights.png" alt="Vols" />
@@ -24,7 +23,6 @@
       </div>
     </div>
 
-    <!-- Bloc Hôtels -->
     <div class="info-block">
       <div class="info-image">
         <img src="../assets/about-hotels.png" alt="Hôtels" />
@@ -69,11 +67,10 @@ export default {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Bloc orange par défaut avec transition rouge au hover */
 .info-block {
   display: flex;
   width: 1280px;
-  background-color: #ff6600; /* orange vif */
+  background-color: #ff6600;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
@@ -83,11 +80,10 @@ export default {
 }
 
 .info-block:hover {
-  background-color: #cc3300; /* rouge foncé */
+  background-color: #cc3300;
   box-shadow: 0 8px 20px rgba(204, 51, 0, 0.6);
 }
 
-/* Image */
 .info-image {
   flex-shrink: 0;
   width: 160px;
@@ -108,7 +104,6 @@ export default {
   transform: scale(1.05);
 }
 
-/* Texte */
 .info-text {
   flex-grow: 1;
   padding: 24px 30px;
@@ -118,8 +113,6 @@ export default {
   justify-content: center;
   overflow-wrap: break-word;
 }
-
-/* Titre */
 .info-text h2 {
   margin: 0 0 12px 0;
   font-weight: 700;
@@ -127,7 +120,6 @@ export default {
   color: #fffde7;
 }
 
-/* Description */
 .info-text p {
   margin: 0;
   font-size: 16px;
@@ -135,7 +127,6 @@ export default {
   color: #ffeacc;
 }
 
-/* Liens dans description */
 .link {
   color: #fff3e6;
   text-decoration: underline;
@@ -146,7 +137,6 @@ export default {
   cursor: pointer;
 }
 
-/* Responsive */
 @media (max-width: 1280px) {
   .info-block {
     flex-direction: column;

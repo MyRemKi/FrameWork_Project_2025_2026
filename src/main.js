@@ -1,8 +1,7 @@
-// main.js
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router"; // ton router
-import "./index.css"; // Tailwind CSS ou ton CSS global
+import router from "./router";
+import "./index.css"; 
 
 const app = createApp(App);
 

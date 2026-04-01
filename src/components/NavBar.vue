@@ -1,19 +1,16 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <!-- Logo -->
       <div class="logo">
         <img src="../assets/logo.png" alt="Logo" />
       </div>
 
-      <!-- Hamburger menu mobile -->
       <button class="hamburger" @click="toggleMenu">
         <span :class="{ open: menuOpen }"></span>
         <span :class="{ open: menuOpen }"></span>
         <span :class="{ open: menuOpen }"></span>
       </button>
 
-      <!-- Navigation -->
       <ul :class="['nav-links', menuOpen ? 'active' : '']">
         <li><router-link to="/">Accueil</router-link></li>
         <li><router-link to="/vols">Vols</router-link></li>
@@ -42,7 +39,6 @@ export default {
 </script>
 
 <style scoped>
-/* =================== NAVBAR =================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -53,13 +49,11 @@ export default {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 
-  /* Dégradé animé violet clair → blanc */
   background: linear-gradient(270deg, #ffffff, #d8b9ff, #ffffff);
   background-size: 300% 100%;
   animation: gradientLoop 3s linear infinite;
 }
 
-/* Container interne */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -68,7 +62,6 @@ export default {
   align-items: center;
 }
 
-/* Logo */
 .logo img {
   max-height: 50px;
   width: auto;
@@ -80,7 +73,6 @@ export default {
   transform: scale(1.05);
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -117,7 +109,6 @@ export default {
   width: 100%;
 }
 
-/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -146,7 +137,6 @@ export default {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -167,7 +157,6 @@ export default {
   }
 }
 
-/* Animation du dégradé */
 @keyframes gradientLoop {
   0% { background-position: 100% 50%; }
   50% { background-position: 0% 50%; }

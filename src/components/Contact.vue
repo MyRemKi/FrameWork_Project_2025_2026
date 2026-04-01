@@ -28,7 +28,6 @@ export default {
   methods: {
     handleSubmit() {
       alert(`Message envoyé!\nNom: ${this.form.name}\nEmail: ${this.form.email}\nMessage: ${this.form.message}`);
-      // Ici tu peux ajouter la logique d'envoi de données (API, email, etc.)
       this.form.name = "";
       this.form.email = "";
       this.form.message = "";
@@ -38,7 +37,6 @@ export default {
 </script>
 
 <style scoped>
-/* Fond dégradé avec formes géométriques */
 .contact-page {
   min-height: 100vh;
   display: flex;
@@ -49,7 +47,6 @@ export default {
   overflow: hidden;
 }
 
-/* Formes géométriques discrètes (triangles et cercles) */
 .contact-page::before,
 .contact-page::after {
   content: "";
@@ -77,12 +74,11 @@ export default {
   border-radius: 50%;
 }
 
-/* Boîte du formulaire */
 .contact-box {
   position: relative;
   z-index: 1;
-  background-color: #374785; /* bleu foncé */
-  border: 6px solid #4883c7; /* cadre bleu clair */
+  background-color: #374785; 
+  border: 6px solid #4883c7;
   padding: 40px 50px;
   border-radius: 8px;
   width: 380px;
@@ -105,7 +101,6 @@ export default {
   color: #d0d7f7;
 }
 
-/* Formulaire et champs */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -128,11 +123,10 @@ export default {
 }
 
 .contact-form input:focus {
-  border-bottom-color: #ffa500; /* orange vif au focus */
+  border-bottom-color: #ffa500; 
   color: white;
 }
 
-/* Bouton submit */
 .contact-form button {
   margin-top: 10px;
   background: transparent;
@@ -157,7 +151,6 @@ export default {
   transition-duration: 0.4s;
 }
 
-/* Responsive */
 @media (max-width: 420px) {
   .contact-box {
     width: 90vw;

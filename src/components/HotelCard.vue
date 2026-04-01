@@ -48,7 +48,6 @@ export default {
       hotel: null,
       loading: false,
       error: "",
-      // on initialise les champs à partir des props
       checkIn: this.check_in_date,
       checkOut: this.check_out_date,
       adultsCount: this.adults
@@ -75,7 +74,6 @@ export default {
           }
         });
 
-        // On prend le premier hôtel retourné
         this.hotel = res.data.hotels?.[0] || null;
 
         if (!this.hotel) this.error = "Hôtel introuvable";

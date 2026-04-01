@@ -1,10 +1,8 @@
 <template>
   <div class="container">
 
-    <!-- BARRE DE RECHERCHE -->
     <div class="search-bar">
 
-      <!-- VILLE + SUGGESTIONS -->
       <div class="field autocomplete-box">
         <label>Destination</label>
         <input
@@ -19,41 +17,34 @@
         </ul>
       </div>
 
-      <!-- CHECK‑IN -->
       <div class="field">
         <label>Arrivée</label>
         <input ref="checkInInput" placeholder="YYYY-MM-DD"/>
       </div>
 
-      <!-- CHECK‑OUT -->
       <div class="field">
         <label>Départ</label>
         <input ref="checkOutInput" placeholder="YYYY-MM-DD"/>
       </div>
 
-      <!-- ADULTES -->
       <div class="field">
         <label>Adultes</label>
         <input type="number" v-model="search.adults" min="1"/>
       </div>
 
-      <!-- PRIX MIN -->
       <div class="field">
         <label>Prix min (€)</label>
         <input type="number" v-model.number="search.price_min" min="0"/>
       </div>
 
-      <!-- PRIX MAX -->
       <div class="field">
         <label>Prix max (€)</label>
         <input type="number" v-model.number="search.price_max" min="0"/>
       </div>
 
-      <!-- BOUTON -->
       <button @click="getHotels" class="btn-search">🔍 Rechercher</button>
     </div>
 
-    <!-- TRI -->
     <div v-if="hotels.length" class="sort-bar" style="margin-top:15px;">
       <label>Tri :</label>
       <select v-model="sortOption" @change="sortHotels">
@@ -65,7 +56,6 @@
       </select>
     </div>
 
-    <!-- RESULTATS -->
     <div v-if="loading" class="loading">Chargement...</div>
     <div v-if="error" class="error">{{ error }}</div>
 
@@ -176,11 +166,9 @@ export default {
           }
         });
 
-        // Nombre de nuits
         const nightsCalc = Math.max(1, (new Date(this.search.check_out_date) - new Date(this.search.check_in_date)) / (1000*60*60*24));
         this.nights = nightsCalc;
 
-        // Total price et filtrage par min/max
         this.hotels = (res.data.hotels || []).map(h => {
           const pricePerNight = parseFloat(h.rate_per_night?.lowest);
           const totalPrice = !isNaN(pricePerNight) ? (pricePerNight * nightsCalc).toFixed(2) : "-";
